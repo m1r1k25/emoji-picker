@@ -1,10 +1,11 @@
-import './App.css'
+import React from 'react'
 import EmojiContainer from './Components/EmojiContainer/EmojiContainer'
 import Input from './Components/Input/Input'
+import styles from './App.module.css'
 
 function App() {
   return (
-    <div>
+    <div className={styles.appWrapper}>
       <EmojiContainer />
       <Input />
     </div>

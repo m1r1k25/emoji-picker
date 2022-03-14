@@ -1,0 +1,12 @@
+.inputWrapper {
+  margin-top: 10px;
+  width: calc(100% - 30px);
+  margin-left: 15px;
+  outline: none;
+  box-shadow: none;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #efefef;
+  border-radius: 3px;
+  transition: border 0.1s;
+}
