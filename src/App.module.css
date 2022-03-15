@@ -2,13 +2,11 @@
   background: #fff;
   display: flex;
   flex-direction: column;
-  height: 320px;
+  height: 400px;
   width: 280px;
   font-family: sans-serif;
-  border: 1px solid #efefef;
   border-radius: 5px;
   box-sizing: border-box;
-  box-shadow: 0 5px 10px #efefef;
   overflow: hidden;
   position: relative;
 }

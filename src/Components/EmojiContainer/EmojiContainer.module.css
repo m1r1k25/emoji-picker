@@ -2,18 +2,21 @@
   flex: 1;
   overflow-y: hidden;
   position: relative;
+  border: 1px solid #efefef;
+  box-shadow: 0 5px 10px #efefef;
+  border-radius: 5px;
 }
 
 .emojiScrollWrapper {
   overflow-y: scroll;
   position: relative;
-  height: 100%;
+  height: calc(100% - 30px);
   box-sizing: border-box;
 }
 
 .emojiGroup {
   clear: both;
-  padding: 0 15px;
+  padding: 0 5px;
   list-style: none;
   margin: 0;
   display: flex;
@@ -41,7 +44,7 @@
 }
 
 .emojiItem {
-  font-size: 25px;
+  font-size: 17px;
 }
 
 button {
@@ -55,4 +58,48 @@ button {
   padding: 0;
   margin: 0;
   cursor: pointer;
+}
+
+.footerSection {
+  top: 306px;
+  left: 0px;
+  position: absolute;
+  min-height: 35px;
+  width: 100%;
+  background-color: rgb(230, 230, 230);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.smileButton {
+  height: 23px;
+  width: 23px;
+  background-image: url('https://icons-for-free.com/iconfiles/png/512/smile+icon-1320167995764238352.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.15;
+}
+
+.timerButton {
+  margin-top: 1px;
+  height: 21px;
+  width: 21px;
+  background-image: url('https://w7.pngwing.com/pngs/587/702/png-transparent-computer-icons-clock-font-awesome-clock-angle-time-share-icon-thumbnail.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+}
+
+.clickButton {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  background-color: rgb(230, 230, 230);
+  padding-top: 5px;
+}
+
+.clickButtonActive {
+  background-color: #fff;
 }

@@ -7,13 +7,12 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-unicorn": "^41.0.0",
-    "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
     "react-scripts": "5.0.0",
+    "redux": "^4.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -26,6 +25,12 @@
     "plugin:react/recommended",
     "prettier"
   ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "parser": "babel-eslint",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -33,6 +38,7 @@
     ]
   },
   "plugins": [
+    "react",
     "prettier"
   ],
   "browserslist": {
@@ -46,5 +52,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-prettier-react": "0.0.24",
+    "eslint-plugin-html": "^5.0.5",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "prettier": "^1.19.1"
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": "eslint --fix",
+    "*.+(json|css|md)": "prettier --write"
   }
 }

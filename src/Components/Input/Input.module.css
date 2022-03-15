@@ -1,12 +1,19 @@
 .inputWrapper {
-  margin-top: 10px;
-  width: calc(100% - 30px);
-  margin-left: 15px;
+  margin: 10px 0;
+  width: 100%;
   outline: none;
-  box-shadow: none;
   padding: 10px;
   box-sizing: border-box;
   border: 1px solid #efefef;
+  box-shadow: 0 5px 10px #efefef;
   border-radius: 3px;
   transition: border 0.1s;
+}
+
+textarea {
+  outline: none;
+  border: none;
+  width: 200px;
+  height: auto;
+  resize: none;
 }
