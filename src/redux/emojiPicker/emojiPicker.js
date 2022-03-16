@@ -1,4 +1,7 @@
 const SET_SHOWING_EMOJIES = 'SET_SHOWING_EMOJIES';
+const SEND_NEW_MESSAGE = 'SEND_NEW_MESSAGE';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
+const ADD_EMOJI_IN_RECENT = 'ADD_EMOJI_IN_RECENT';
 
 const defaultState = {
   emojies: [
@@ -1389,21 +1392,56 @@ const defaultState = {
   ],
   recentEmojies: [],
   isShowEmojies: false,
+  newMessageBody: '',
+  messages: [],
 };
 
-export default function emojiPicker(state = defaultState, action) {
+const emojiPicker = (state = defaultState, action) => {
   switch (action.type) {
     case SET_SHOWING_EMOJIES:
       return {
         ...state,
         isShowEmojies: action.payload,
       };
+    case UPDATE_NEW_MESSAGE_BODY:
+      return {
+        ...state,
+        newMessageBody: action.payload,
+      };
+    case SEND_NEW_MESSAGE:
+      return {
+        ...state,
+        messages: [...state.messages, action.payload],
+      };
+    case ADD_EMOJI_IN_RECENT:
+      return {
+        ...state,
+        recentEmojies: [
+          ...new Set([...state.recentEmojies, action.payload]),
+        ].splice(-24),
+      };
     default:
       return state;
   }
-}
+};
+
+export default emojiPicker;
 
 export const setShowingEmojies = isShowing => ({
   type: SET_SHOWING_EMOJIES,
   payload: isShowing,
+});
+export const sendMessage = message => ({
+  type: SEND_NEW_MESSAGE,
+  payload: message,
+});
+export const updateNewMessageBody = body => {
+  return {
+    type: UPDATE_NEW_MESSAGE_BODY,
+    payload: body,
+  };
+};
+export const addEmojiInRecent = body => ({
+  type: ADD_EMOJI_IN_RECENT,
+  payload: body,
 });

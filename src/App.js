@@ -3,6 +3,7 @@ import EmojiContainer from './Components/EmojiContainer/EmojiContainer';
 import Input from './Components/Input/Input';
 import styles from './App.module.css';
 import { useSelector } from 'react-redux';
+import MessageContainer from './Components/MessageContainer/MessageContainer';
 
 function App() {
   const isShowEmojies = useSelector(state => state.isShowEmojies);

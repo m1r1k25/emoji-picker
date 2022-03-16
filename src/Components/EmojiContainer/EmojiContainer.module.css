@@ -4,6 +4,7 @@
   border: 1px solid #efefef;
   box-shadow: 0 5px 10px #efefef;
   border-radius: 5px;
+  height: 350px;
 }
 
 .emojiScrollWrapper {
@@ -11,11 +12,10 @@
   position: relative;
   height: calc(100% - 30px);
   box-sizing: border-box;
-  min-height: 400px;
+  min-height: 300px;
 }
 
 .emojiGroup {
-  clear: both;
   padding: 0 5px;
   list-style: none;
   margin: 0;
@@ -102,6 +102,17 @@ button {
   width: 21px;
   background-image: url('https://w7.pngwing.com/pngs/587/702/png-transparent-computer-icons-clock-font-awesome-clock-angle-time-share-icon-thumbnail.png');
   background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  cursor: pointer;
+}
+
+.sendButton {
+  height: 23px;
+  width: 23px;
+  background-image: url('https://pngset.com/images/send-message-button-logo-symbol-trademark-axe-transparent-png-2232411.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   opacity: 0.15;
   cursor: pointer;

@@ -1,0 +1,13 @@
+.messagesContainer {
+  min-height: 400px;
+  width: 100%;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  border: 1px solid #efefef;
+  box-shadow: 0 5px 10px #efefef;
+  border-radius: 3px;
+  transition: border 0.1s;
+}
+
+.messageWrapper {
+}
