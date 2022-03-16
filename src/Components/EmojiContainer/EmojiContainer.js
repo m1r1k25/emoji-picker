@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './EmojiContainer.module.css';
 import EmojiCategory from './EmojiCategory';
 import { useSelector } from 'react-redux';
+import EmojiRecent from './EmojiRecent';
 
 const EmojiContainer = () => {
   const [active, setActive] = useState(0);
@@ -20,12 +21,16 @@ const EmojiContainer = () => {
     <EmojiCategory category={category} />
   ));
 
+  const recentEmojies = useSelector(state => state.recentEmojies);
+
   return (
     <div className={styles.contentWrapper}>
       {active === 0 ? (
         <section className={styles.emojiScrollWrapper}>{categories}</section>
       ) : (
-        <p>gggg</p>
+        <section className={styles.emojiScrollWrapper}>
+          <EmojiRecent recentEmojies={recentEmojies} />
+        </section>
       )}
 
       <div className={styles.footerSection}>

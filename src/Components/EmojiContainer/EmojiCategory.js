@@ -1,9 +1,9 @@
-import React from 'react'
-import styles from './EmojiContainer.module.css'
-import EmojiItem from './EmojiItem'
+import React from 'react';
+import styles from './EmojiContainer.module.css';
+import EmojiItem from './EmojiItem';
 
 const EmojiCategory = ({ category }) => {
-  const emojiItems = category.items.map(emoji => <EmojiItem emoji={emoji} />)
+  const emojiItems = category.items.map(emoji => <EmojiItem emoji={emoji} />);
 
   return (
     <div>
@@ -11,7 +11,7 @@ const EmojiCategory = ({ category }) => {
         {emojiItems}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default EmojiCategory
+export default EmojiCategory;

@@ -1,3 +1,5 @@
+const SET_SHOWING_EMOJIES = 'SET_SHOWING_EMOJIES';
+
 const defaultState = {
   emojies: [
     {
@@ -1386,11 +1388,22 @@ const defaultState = {
     },
   ],
   recentEmojies: [],
+  isShowEmojies: false,
 };
 
 export default function emojiPicker(state = defaultState, action) {
   switch (action.type) {
+    case SET_SHOWING_EMOJIES:
+      return {
+        ...state,
+        isShowEmojies: action.payload,
+      };
     default:
       return state;
   }
 }
+
+export const setShowingEmojies = isShowing => ({
+  type: SET_SHOWING_EMOJIES,
+  payload: isShowing,
+});

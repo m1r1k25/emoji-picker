@@ -1,5 +1,4 @@
 .contentWrapper {
-  flex: 1;
   overflow-y: hidden;
   position: relative;
   border: 1px solid #efefef;
@@ -12,6 +11,7 @@
   position: relative;
   height: calc(100% - 30px);
   box-sizing: border-box;
+  min-height: 400px;
 }
 
 .emojiGroup {
@@ -61,7 +61,7 @@ button {
 }
 
 .footerSection {
-  top: 306px;
+  top: calc(100% - 35px);
   left: 0px;
   position: absolute;
   min-height: 35px;
@@ -69,26 +69,7 @@ button {
   background-color: rgb(230, 230, 230);
   display: flex;
   justify-content: flex-start;
-}
-
-.smileButton {
-  height: 23px;
-  width: 23px;
-  background-image: url('https://icons-for-free.com/iconfiles/png/512/smile+icon-1320167995764238352.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.15;
-}
-
-.timerButton {
-  margin-top: 1px;
-  height: 21px;
-  width: 21px;
-  background-image: url('https://w7.pngwing.com/pngs/587/702/png-transparent-computer-icons-clock-font-awesome-clock-angle-time-share-icon-thumbnail.png');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.15;
+  z-index: 1;
 }
 
 .clickButton {
@@ -102,4 +83,26 @@ button {
 
 .clickButtonActive {
   background-color: #fff;
+}
+
+.smileButton {
+  height: 23px;
+  width: 23px;
+  background-image: url('https://icons-for-free.com/iconfiles/png/512/smile+icon-1320167995764238352.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.15;
+  cursor: pointer;
+}
+
+.timerButton {
+  margin-top: 1px;
+  height: 21px;
+  width: 21px;
+  background-image: url('https://w7.pngwing.com/pngs/587/702/png-transparent-computer-icons-clock-font-awesome-clock-angle-time-share-icon-thumbnail.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  cursor: pointer;
 }

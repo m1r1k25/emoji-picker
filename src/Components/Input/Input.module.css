@@ -8,12 +8,12 @@
   box-shadow: 0 5px 10px #efefef;
   border-radius: 3px;
   transition: border 0.1s;
+  display: flex;
+  justify-content: space-between;
 }
 
 textarea {
   outline: none;
   border: none;
-  width: 200px;
-  height: auto;
   resize: none;
 }
