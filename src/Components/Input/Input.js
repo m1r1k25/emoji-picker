@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Input.module.css';
 import styleButton from './../EmojiContainer/EmojiContainer.module.css';
 import TextareaAutosize from 'react-textarea-autosize';
@@ -15,7 +15,7 @@ const Input = () => {
 
   const dispatch = useDispatch();
 
-  /*   const messages = useSelector(state => state.messages);
+  /*  const messages = useSelector(state => state.messages);
   console.log(messages); */
 
   /*   const recentEmojies = useSelector(state => state.recentEmojies);

@@ -1,13 +1,12 @@
 import React from 'react';
-import styles from './MessageContainer.module.css';
 import Message from './Message';
+import { useDispatch, useSelector } from 'react-redux';
 
-const messageContainer = () => {
-  return (
-    <div className={styles.messagesContainer}>
-      <Message />
-    </div>
-  );
+const MessageContainer = () => {
+  const messages = useSelector(state => state.messages);
+  const allMessages = messages.map(message => <Message message={message} />);
+
+  return <div>{allMessages.reverse()}</div>;
 };
 
-export default messageContainer;
+export default MessageContainer;

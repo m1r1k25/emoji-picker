@@ -1,6 +1,6 @@
 .inputWrapper {
   margin: 10px 0;
-  width: 100%;
+  max-width: 100%;
   outline: none;
   padding: 10px;
   box-sizing: border-box;
@@ -16,4 +16,8 @@ textarea {
   outline: none;
   border: none;
   resize: none;
+}
+
+.textContainer {
+  width: 180px;
 }

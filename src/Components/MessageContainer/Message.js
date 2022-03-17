@@ -1,10 +1,32 @@
 import React from 'react';
 import styles from './MessageContainer.module.css';
 
-const Message = () => {
+const Message = ({ message }) => {
+  const formatMessage = messageBody => {
+    const amFormattedMessage = messageBody.split(' ');
+    const result = amFormattedMessage.map(word => {
+      if (word.slice(0, 1) === '@' || word.slice(0, 1) === '#') {
+        return <span className={styles.formattedWord}>{`${word} `}</span>;
+      } else if (word.split('').includes('@')) {
+        return (
+          <a
+            href={`mailto:${word}`}
+            className={styles.formattedWord}
+          >{`${word} `}</a>
+        );
+      } else if (word.slice(0, 4) === 'http') {
+        return <a href={word} className={styles.formattedWord}>{`${word} `}</a>;
+      }
+      return <span>{`${word} `}</span>;
+    });
+    return result;
+  };
+
+  const newNessage = formatMessage(message);
+
   return (
-    <div className={styles.messageWrapper}>
-      <p></p>
+    <div>
+      <span className={styles.messageWrapper}>{newNessage}</span>
     </div>
   );
 };

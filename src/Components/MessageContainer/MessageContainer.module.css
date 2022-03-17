@@ -7,7 +7,25 @@
   box-shadow: 0 5px 10px #efefef;
   border-radius: 3px;
   transition: border 0.1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 }
 
 .messageWrapper {
+  margin: 0 auto;
+  display: inline-block;
+  max-width: 180px;
+  height: 100%;
+  background-color: rgb(47, 196, 241);
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  padding: 0px 10px;
+  line-height: 25px;
+  margin-top: 5px;
+  word-wrap: break-word;
+}
+
+.formattedWord {
+  color: blue;
 }
