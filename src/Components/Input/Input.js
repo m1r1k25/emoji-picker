@@ -24,7 +24,9 @@ const Input = () => {
   };
 
   const createNewMessage = () => {
-    if (!newMessageBody) {
+    if (!newMessageBody) return;
+    if (newMessageBody.trim() === '') {
+      dispatch(updateNewMessageBody(''));
       return;
     }
     dispatch(sendMessage(newMessageBody));
