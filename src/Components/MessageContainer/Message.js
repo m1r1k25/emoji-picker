@@ -3,8 +3,7 @@ import styles from './MessageContainer.module.css';
 
 const Message = ({ message }) => {
   const formatMessage = messageBody => {
-    const amFormattedMessage = messageBody.split(' ');
-    const result = amFormattedMessage.map(word => {
+    return messageBody.split(' ').map(word => {
       if (word.slice(0, 1) === '@' || word.slice(0, 1) === '#') {
         return <span className={styles.formattedWord}>{`${word} `}</span>;
       } else if (word.split('').includes('@')) {
@@ -19,14 +18,11 @@ const Message = ({ message }) => {
       }
       return <span>{`${word} `}</span>;
     });
-    return result;
   };
-
-  const newNessage = formatMessage(message);
 
   return (
     <div>
-      <span className={styles.messageWrapper}>{newNessage}</span>
+      <span className={styles.messageWrapper}>{formatMessage(message)}</span>
     </div>
   );
 };

@@ -3,6 +3,8 @@ const SEND_NEW_MESSAGE = 'SEND_NEW_MESSAGE';
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
 const ADD_EMOJI_IN_RECENT = 'ADD_EMOJI_IN_RECENT';
 
+const maxQuantityOfRecentEmojies = 25;
+
 const defaultState = {
   emojies: [
     {
@@ -1418,7 +1420,7 @@ const emojiPicker = (state = defaultState, action) => {
         ...state,
         recentEmojies: [
           ...new Set([...state.recentEmojies, action.payload]),
-        ].splice(-24),
+        ].splice(-maxQuantityOfRecentEmojies),
       };
     default:
       return state;

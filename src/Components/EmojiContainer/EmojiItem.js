@@ -10,19 +10,26 @@ const EmojiItem = ({ emoji }) => {
   const newMessageBody = useSelector(state => state.newMessageBody);
   const dispatch = useDispatch();
 
-  const onEmojiClick = () => {
+  const addEmoji = () => {
     let body = newMessageBody + emoji;
     dispatch(updateNewMessageBody(body));
     dispatch(addEmojiInRecent(emoji));
   };
 
+  const onEmojiClick = () => {
+    addEmoji();
+  };
+
   return (
     <div>
       <li className={styles.emoji}>
-        <button type="button">
-          <div className={styles.emojiItem} onClick={onEmojiClick}>
-            {emoji}
-          </div>
+        <button
+          tabIndex="0"
+          type="button"
+          className={styles.emojiItem}
+          onClick={onEmojiClick}
+        >
+          {emoji}
         </button>
       </li>
     </div>

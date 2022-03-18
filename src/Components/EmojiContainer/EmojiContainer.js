@@ -5,14 +5,15 @@ import { useSelector } from 'react-redux';
 import EmojiRecent from './EmojiRecent';
 
 const EmojiContainer = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(false);
+  const recentEmojies = useSelector(state => state.recentEmojies);
 
   const onAllEmojiClick = () => {
-    setActive(0);
+    setActive(false);
   };
 
   const onRecentClick = () => {
-    setActive(1);
+    setActive(true);
   };
 
   const emojies = useSelector(state => state.emojies);
@@ -21,11 +22,9 @@ const EmojiContainer = () => {
     <EmojiCategory category={category} />
   ));
 
-  const recentEmojies = useSelector(state => state.recentEmojies);
-
   return (
     <div className={styles.contentWrapper}>
-      {active === 0 ? (
+      {!active ? (
         <section className={styles.emojiScrollWrapper}>{categories}</section>
       ) : (
         <section className={styles.emojiScrollWrapper}>
@@ -36,7 +35,7 @@ const EmojiContainer = () => {
       <div className={styles.footerSection}>
         <div
           className={`${styles.clickButton} ${
-            active === 0 ? styles.clickButtonActive : ''
+            !active ? styles.clickButtonActive : ''
           }`}
           onClick={onAllEmojiClick}
         >
@@ -44,7 +43,7 @@ const EmojiContainer = () => {
         </div>
         <div
           className={`${styles.clickButton} ${
-            active === 1 ? styles.clickButtonActive : ''
+            active ? styles.clickButtonActive : ''
           }`}
           onClick={onRecentClick}
         >

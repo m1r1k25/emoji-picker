@@ -16,8 +16,16 @@ textarea {
   outline: none;
   border: none;
   resize: none;
+  width: 180px;
 }
 
-.textContainer {
-  width: 180px;
+.sendButton {
+  height: 23px;
+  width: 23px;
+  background-image: url('https://pngset.com/images/send-message-button-logo-symbol-trademark-axe-transparent-png-2232411.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.15;
+  cursor: pointer;
 }

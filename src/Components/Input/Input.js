@@ -15,12 +15,6 @@ const Input = () => {
 
   const dispatch = useDispatch();
 
-  /*  const messages = useSelector(state => state.messages);
-  console.log(messages); */
-
-  /*   const recentEmojies = useSelector(state => state.recentEmojies);
-  console.log(recentEmojies); */
-
   const changeShowStatus = () => {
     dispatch(setShowingEmojies(isShowEmojies ? false : true));
   };
@@ -29,20 +23,33 @@ const Input = () => {
     dispatch(updateNewMessageBody(event.target.value));
   };
 
-  const onSendMessageClick = () => {
+  const createNewMessage = () => {
+    if (!newMessageBody) {
+      return;
+    }
     dispatch(sendMessage(newMessageBody));
     dispatch(updateNewMessageBody(''));
+  };
+
+  const onSendMessageClick = () => {
+    createNewMessage();
+  };
+
+  const onEnterPress = e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      createNewMessage();
+    }
   };
 
   return (
     <div className={styles.inputWrapper}>
       <TextareaAutosize
-        aria-label="minimum height"
         minRows={1}
         placeholder="Ваше сообщение"
-        style={{ width: 180 }}
         value={newMessageBody}
         onChange={onNewMessageChange}
+        onKeyDown={onEnterPress}
       />
       <div
         className={styleButton.sendButton}

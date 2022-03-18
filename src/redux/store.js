@@ -1,6 +1,6 @@
-import { createStore } from 'redux'
-import emojiPicker from './emojiPicker/emojiPicker'
+import { createStore } from 'redux';
+import emojiPicker from './emojiPicker/emojiPicker';
 
-const store = createStore(emojiPicker)
+const store = createStore(emojiPicker);
 
-export default store
+export default store;
