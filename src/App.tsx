@@ -5,7 +5,7 @@ import styles from './App.module.css';
 import { useSelector } from 'react-redux';
 import MessageContainer from './Components/MessageContainer/MessageContainer';
 
-function App() {
+const App = () => {
   const isShowEmojies = useSelector(state => state.isShowEmojies);
   return (
     <div className={styles.appWrapper}>
@@ -14,6 +14,6 @@ function App() {
       <MessageContainer />
     </div>
   );
-}
+};
 
 export default App;

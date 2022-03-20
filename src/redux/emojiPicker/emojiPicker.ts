@@ -5,7 +5,15 @@ const ADD_EMOJI_IN_RECENT = 'ADD_EMOJI_IN_RECENT';
 
 const maxQuantityOfRecentEmojies = 25;
 
-const defaultState = {
+interface emojiPickerState {
+  emojies: any[];
+  recentEmojies: string[];
+  isShowEmojies: boolean;
+  newMessageBody: string;
+  messages: any[];
+}
+
+const initialState: emojiPickerState = {
   emojies: [
     {
       title: 'Эмоции',
@@ -1398,7 +1406,7 @@ const defaultState = {
   messages: [],
 };
 
-const emojiPicker = (state = defaultState, action) => {
+const emojiPicker = (state = initialState, action) => {
   switch (action.type) {
     case SET_SHOWING_EMOJIES:
       return {

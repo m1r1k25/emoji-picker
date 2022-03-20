@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from './EmojiContainer.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -6,8 +6,8 @@ import {
   addEmojiInRecent,
 } from '../../redux/emojiPicker/emojiPicker';
 
-const EmojiItem = ({ emoji }) => {
-  const newMessageBody = useSelector(state => state.newMessageBody);
+const EmojiItem = ({ emoji }: any) => {
+  const newMessageBody = useSelector((state: any) => state.newMessageBody);
   const dispatch = useDispatch();
 
   const addEmoji = () => {
