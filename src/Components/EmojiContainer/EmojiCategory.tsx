@@ -1,9 +1,11 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import styles from './EmojiContainer.module.css';
 import EmojiItem from './EmojiItem';
+import { ICategoryProps } from './types';
 
-const EmojiCategory: FC = ({ category }) => {
-  const emojiItems = category.items.map(emoji => <EmojiItem emoji={emoji} />);
+const EmojiCategory: FC<ICategoryProps> = ({ category }) => {
+
+  const emojiItems = category.items.map((emoji: string) => <EmojiItem emoji={emoji} />);
 
   return (
     <div>

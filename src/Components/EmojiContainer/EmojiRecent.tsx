@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styles from './EmojiContainer.module.css';
 import EmojiItem from './EmojiItem';
+import {RecentEmojiesProps} from './types';
 
-const EmojiRecent = ({ recentEmojies }) => {
+const EmojiRecent: FC<RecentEmojiesProps> = ({ recentEmojies }) => {
   const emojiItems = recentEmojies.map(emoji => <EmojiItem emoji={emoji} />);
 
   return (

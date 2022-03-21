@@ -1,13 +1,15 @@
 import React, { FC } from 'react';
 import styles from './EmojiContainer.module.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   updateNewMessageBody,
   addEmojiInRecent,
-} from '../../redux/emojiPicker/emojiPicker';
+} from '../../store/emojiPicker/emojiPicker';
+import { EmojiProps } from './types';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 
-const EmojiItem = ({ emoji }: any) => {
-  const newMessageBody = useSelector((state: any) => state.newMessageBody);
+const EmojiItem: FC<EmojiProps> = ({ emoji }) => {
+  const newMessageBody = useTypedSelector (state => state.emojiState.newMessageBody);
   const dispatch = useDispatch();
 
   const addEmoji = () => {
@@ -24,7 +26,7 @@ const EmojiItem = ({ emoji }: any) => {
     <div>
       <li className={styles.emoji}>
         <button
-          tabIndex="0"
+          //tabIndex="0"
           type="button"
           className={styles.emojiItem}
           onClick={onEmojiClick}

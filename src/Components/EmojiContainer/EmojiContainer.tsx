@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import styles from './EmojiContainer.module.css';
 import EmojiCategory from './EmojiCategory';
-import { useSelector } from 'react-redux';
 import EmojiRecent from './EmojiRecent';
+import { ICategory } from './types';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 const EmojiContainer = () => {
+
   const [active, setActive] = useState(false);
-  const recentEmojies = useSelector(state => state.recentEmojies);
+  const recentEmojies = useTypedSelector(state => state.emojiState.recentEmojies);
 
   const onAllEmojiClick = () => {
     setActive(false);
@@ -16,9 +18,9 @@ const EmojiContainer = () => {
     setActive(true);
   };
 
-  const emojies = useSelector(state => state.emojies);
+  const emojies = useTypedSelector(state => state.emojiState.emojies);
 
-  const categories = emojies.map(category => (
+  const categories = emojies.map((category: ICategory) => (
     <EmojiCategory category={category} />
   ));
 

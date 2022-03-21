@@ -2,16 +2,17 @@ import React from 'react';
 import styles from './Input.module.css';
 import styleButton from './../EmojiContainer/EmojiContainer.module.css';
 import TextareaAutosize from 'react-textarea-autosize';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   setShowingEmojies,
   sendMessage,
   updateNewMessageBody,
-} from '../../redux/emojiPicker/emojiPicker';
+} from '../../store/emojiPicker/emojiPicker';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 const Input = () => {
-  const isShowEmojies = useSelector(state => state.isShowEmojies);
-  const newMessageBody = useSelector(state => state.newMessageBody);
+  const isShowEmojies = useTypedSelector(state => state.emojiState.isShowEmojies);
+  const newMessageBody = useTypedSelector(state => state.emojiState.newMessageBody);
 
   const dispatch = useDispatch();
 
@@ -19,7 +20,7 @@ const Input = () => {
     dispatch(setShowingEmojies(isShowEmojies ? false : true));
   };
 
-  const onNewMessageChange = event => {
+  const onNewMessageChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     dispatch(updateNewMessageBody(event.target.value));
   };
 
@@ -37,7 +38,7 @@ const Input = () => {
     createNewMessage();
   };
 
-  const onEnterPress = e => {
+  const onEnterPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       createNewMessage();
